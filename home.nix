@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/hangocdinh";
 
   imports = [
+    ./modules/emacs.nix
   ];
 
   home.stateVersion = "24.05";
