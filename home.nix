@@ -17,6 +17,7 @@
     eza
     git
     lazygit
+    gh
   ];
 
   home.sessionVariables = {
