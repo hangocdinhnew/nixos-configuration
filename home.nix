@@ -7,6 +7,7 @@
   imports = [
     ./modules/emacs.nix
     ./modules/wezterm.nix
+    ./modules/zsh.nix
   ];
   
   home.stateVersion = "24.05";
