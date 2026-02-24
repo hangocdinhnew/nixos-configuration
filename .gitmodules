@@ -1,3 +1,6 @@
 [submodule "config/emacs"]
 	path = config/emacs
 	url = https://github.com/hangocdinhnew/emacs-config
+[submodule "config/wezterm"]
+	path = config/wezterm
+	url = https://github.com/hangocdinhnew/wezterm-config

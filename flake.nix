@@ -8,15 +8,14 @@
       submodules = true;
     };
   };
-
+  
   outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-	 ./configuration.nix 
-         inputs.home-manager.nixosModules.default
+	      ./configuration.nix 
+        inputs.home-manager.nixosModules.default
       ];
     };
   };
 }
-
