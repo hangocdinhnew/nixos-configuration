@@ -21,6 +21,7 @@
     lazygit
     gh
     wezterm
+    devenv
   ];
   
   home.sessionVariables = {
