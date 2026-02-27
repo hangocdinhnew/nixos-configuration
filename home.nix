@@ -22,6 +22,7 @@
     gh
     wezterm
     devenv
+    ripgrep
   ];
   
   home.sessionVariables = {

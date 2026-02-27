@@ -20,6 +20,8 @@
 
   services.automatic-timezoned.enable = true;
 
+  programs.nix-ld.enable = true;
+
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.desktopManager.plasma6.enable = true;
