@@ -30,6 +30,12 @@
     wayland.enable = true;
   };
   services.xserver.enable = true;
+  services.xserver.windowManager.qtile = {
+    enable = true;
+    extraPackages = python3Packages: with python3Packages; [
+      qtile-extras
+    ];
+  };
 
   services.pipewire = {
     enable = true;
@@ -49,6 +55,9 @@
     mesa
     mesa-demos
     vulkan-tools
+    wlr-randr
+    wl-clipboard
+    xclip
   ];
 
   programs.mtr.enable = true;
