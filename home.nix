@@ -29,7 +29,10 @@
     EDITOR = "emacs";
   };
   
-  programs.emacs.enable = true;
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs-pgtk;
+  };
   programs.firefox.enable = true;
   
   programs.home-manager.enable = true;
