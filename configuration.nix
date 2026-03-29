@@ -42,9 +42,14 @@
     pulse.enable = true;
   };
 
+
+  programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   users.users.hangocdinh = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "libvirtd" ];
   };
 
   environment.systemPackages = with pkgs; [
