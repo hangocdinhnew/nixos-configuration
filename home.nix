@@ -23,6 +23,8 @@
     wezterm
     devenv
     ripgrep
+    grim
+    krita
   ];
   
   home.sessionVariables = {
@@ -34,6 +36,16 @@
     package = pkgs.emacs-pgtk;
   };
   programs.firefox.enable = true;
+
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        useGrimAdapter = true;
+        disabledGrimWarning = true;
+      };
+    };
+  };
   
   programs.home-manager.enable = true;
 }
