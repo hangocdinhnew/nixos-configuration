@@ -8,6 +8,7 @@
     ./modules/emacs.nix
     ./modules/wezterm.nix
     ./modules/zsh.nix
+    ./modules/qtile.nix
   ];
   
   home.stateVersion = "24.05";
