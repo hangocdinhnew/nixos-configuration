@@ -36,6 +36,8 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
+  hardware.graphics.enable = true;
+
   environment.systemPackages = with pkgs; [
     vim
     wget
