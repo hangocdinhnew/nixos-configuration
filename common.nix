@@ -37,13 +37,16 @@
   virtualisation.spiceUSBRedirection.enable = true;
 
   hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [
+    mesa
+    mesa.opencl
+  ];
 
   environment.systemPackages = with pkgs; [
     vim
     wget
     curl
     aria2
-    mesa
     mesa-demos
     vulkan-tools
     wlr-randr
