@@ -17,28 +17,30 @@
     };
   };
   
+
   outputs = inputs@{ self, nixpkgs, ... }: {
     let 
       commonModules = [
         ./home.nix
         ./common.nix
         inputs.home-manager.nixosModules.default
-      ];
-    in
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/desktop/configuration.nix 
-        ] ++ commonModules;
-      };
-      
-      mac = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/mac/configuration.nix
-        ] ++ commonModules;
-      };
-    }
+       ];
+    in {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/desktop/configuration.nix 
+          ] ++ commonModules;
+        };
+        
+        mac = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/mac/configuration.nix
+          ] ++ commonModules;
+        };
+      }
+    };
   };
 }
