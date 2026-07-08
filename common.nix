@@ -1,16 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports = [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-  ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "hangocdinh-nixos";
   networking.networkmanager.enable = true;
   networking.nameservers = [
@@ -68,12 +58,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.hangocdinh = ./home.nix;
   };
 
   services.openssh.enable = true;
