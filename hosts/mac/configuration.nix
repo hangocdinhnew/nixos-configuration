@@ -10,6 +10,7 @@
   };
 
   hardware.asahi = {
+    enable = true;
     setupAsahiSound = true;
     peripheralFirmwareDirectory = /boot/vendorfw;
   };

@@ -36,11 +36,6 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
-  users.users.hangocdinh = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ];
-  };
-
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -71,6 +66,13 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  users.users.hangocdinh = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "libvirtd" ];
+  };
+
+  home-manager.users.hangocdinh = import ./home.nix;
 
   system.stateVersion = "25.11";
 }

@@ -18,10 +18,9 @@
   };
   
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
+  outputs = inputs@{ self, nixpkgs, ... }:
     let 
       commonModules = [
-        ./home.nix
         ./common.nix
         inputs.home-manager.nixosModules.default
        ];
@@ -38,9 +37,9 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/mac/configuration.nix
+            inputs.nixos-apple-silicon.nixosModules.default
           ] ++ commonModules;
         };
-      }
+      };
     };
-  };
 }
