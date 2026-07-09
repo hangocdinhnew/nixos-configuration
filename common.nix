@@ -8,8 +8,6 @@
     "1.0.0.1"
   ];
 
-  services.automatic-timezoned.enable = true;
-
   programs.nix-ld.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -31,6 +29,8 @@
     enable = true;
     pulse.enable = true;
   };
+
+  services.automatic-timezoned.enable = true;
 
   systemd.oomd.enable = true;
 
