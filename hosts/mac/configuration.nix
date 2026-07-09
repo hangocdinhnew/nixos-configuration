@@ -30,7 +30,5 @@
 
   environment.systemPackages = with pkgs; [
     asahi-bless
-    muvm
-    fex
   ];
 }

@@ -56,8 +56,6 @@
     wlr-randr
     wl-clipboard
     xclip
-    squashfuse
-    squashfsTools
   ];
 
   programs.mtr.enable = true;
