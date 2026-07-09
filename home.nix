@@ -27,7 +27,6 @@
     grim
     krita
     protonplus
-    lutris
   ];
   
   home.sessionVariables = {
