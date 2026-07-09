@@ -26,6 +26,7 @@
     ripgrep
     grim
     krita
+    protonplus
   ];
   
   home.sessionVariables = {
