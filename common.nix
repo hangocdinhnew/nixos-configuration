@@ -1,6 +1,8 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+  
   networking.hostName = "hangocdinh-nixos";
   networking.networkmanager.enable = true;
   networking.nameservers = [
