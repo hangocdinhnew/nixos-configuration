@@ -40,12 +40,17 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+  
   hardware.graphics.enable = true;
   hardware.graphics.extraPackages = with pkgs; [
     mesa
     mesa.opencl
   ];
-
+  
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -56,14 +61,15 @@
     wlr-randr
     wl-clipboard
     xclip
+    distrobox
   ];
-
+  
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
-
+  
   services.openssh.enable = true;
   networking.firewall = {
     enable = true;
@@ -73,16 +79,16 @@
       { from = 8000; to = 8010; }
     ];
   };
-
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   users.users.hangocdinh = {
     isNormalUser = true;
     extraGroups = [ "wheel" "libvirtd" ];
   };
-
+  
   home-manager.users.hangocdinh = import ./home.nix;
-
+  
   system.stateVersion = "25.11";
 }
-
+  
